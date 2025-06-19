@@ -1,0 +1,56 @@
+import type { MetaFunction } from "react-router";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "New React Router App" },
+    { name: "description", content: "Welcome to React Router!" },
+  ];
+};
+
+export default function Index() {
+  return (
+    <div className="flex h-screen items-center justify-center">
+      <div className="flex flex-col items-center gap-16">
+        <header className="flex flex-col items-center gap-9">
+          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
+            Welcome to <span className="sr-only">React Router</span>
+          </h1>
+          <div className="h-[144px] w-[434px]">
+            <img
+              src="/logo-light.png"
+              alt="React Router"
+              className="block w-full dark:hidden"
+            />
+            <img
+              src="/logo-dark.png"
+              alt="React Router"
+              className="hidden w-full dark:block"
+            />
+          </div>
+        </header>
+        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
+          <p className="leading-6 text-gray-700 dark:text-gray-200">
+            <strong>React Router v7</strong> running on{" "}
+            <strong>Cloudflare Workers</strong>
+          </p>
+          <div className="flex gap-4">
+            <a
+              className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-gray-400 dark:border-gray-600 dark:text-gray-200 dark:hover:border-gray-500"
+              href="/about"
+            >
+              About
+            </a>
+            <a
+              className="flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+              href="https://reactrouter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Documentation
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  );
+} 

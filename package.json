@@ -1,0 +1,83 @@
+{
+    "name": "@10xsai/cloudflare-router-nx-plugin",
+    "version": "1.0.0",
+    "description": "Nx plugin for creating React Router apps with Cloudflare setup",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "commonjs",
+    "files": [
+        "dist/**/*",
+        "generators.json",
+        "executors.json",
+        "README.md",
+        "LICENSE"
+    ],
+    "scripts": {
+        "build": "tsc && npm run copy-files",
+        "copy-files": "cp -r src/generators/app/files dist/generators/app/ && cp generators.json dist/ && cp executors.json dist/",
+        "prepare": "npm run build",
+        "test": "node test-plugin.js",
+        "prepublishOnly": "npm run build && npm test",
+        "version": "npm run build",
+        "postversion": "git push && git push --tags"
+    },
+    "keywords": [
+        "nx",
+        "plugin",
+        "react",
+        "router",
+        "cloudflare",
+        "workers",
+        "pages",
+        "nx-plugin",
+        "react-router",
+        "cloudflare-pages",
+        "cloudflare-workers"
+    ],
+    "author": "Sai Krishna Gottipalli (10xsai)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/10xsai/cloudflare-router-nx-plugin.git"
+    },
+    "homepage": "https://github.com/10xsai/cloudflare-router-nx-plugin#readme",
+    "bugs": {
+        "url": "https://github.com/10xsai/cloudflare-router-nx-plugin/issues"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "peerDependencies": {
+        "@nx/devkit": ">=17.0.0",
+        "nx": ">=17.0.0"
+    },
+    "dependencies": {
+        "@nx/devkit": "^20.2.9",
+        "@nx/js": "^20.2.9",
+        "@nx/react": "^20.2.9",
+        "@nx/vite": "^20.2.9",
+        "@nx/workspace": "^20.2.9"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "typescript": "^5.8.3",
+        "nx": "^20.2.9"
+    },
+    "nx": {
+        "targets": {
+            "build": {
+                "executor": "@nx/js:tsc",
+                "outputs": [
+                    "{options.outputPath}"
+                ],
+                "options": {
+                    "outputPath": "dist",
+                    "main": "src/index.ts",
+                    "tsConfig": "tsconfig.json"
+                }
+            }
+        }
+    },
+    "generators": "./generators.json",
+    "executors": "./executors.json"
+}

@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "CloudflareRouterApp",
+    "title": "Create a React Router app for Cloudflare Workers",
+    "description": "Create a React Router app optimized for Cloudflare Workers deployment.",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the application.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "What name would you like to use for the application?"
+        },
+        "directory": {
+            "type": "string",
+            "description": "The directory of the new application."
+        },
+        "style": {
+            "description": "The file extension to be used for style files.",
+            "type": "string",
+            "default": "tailwind",
+            "enum": [
+                "css",
+                "tailwind"
+            ],
+            "x-prompt": {
+                "message": "Which stylesheet format would you like to use?",
+                "type": "list",
+                "items": [
+                    {
+                        "value": "css",
+                        "label": "CSS"
+                    },
+                    {
+                        "value": "tailwind",
+                        "label": "Tailwind CSS"
+                    }
+                ]
+            }
+        },
+        "skipTests": {
+            "description": "When true, does not create \"spec.ts\" test files for the application.",
+            "type": "boolean",
+            "default": false,
+            "alias": "S"
+        },
+        "skipPackageJson": {
+            "type": "boolean",
+            "default": false,
+            "description": "Do not add dependencies to `package.json`.",
+            "alias": "skipPackageJson"
+        },
+        "tags": {
+            "type": "string",
+            "description": "Add tags to the application (used for linting).",
+            "alias": "t"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

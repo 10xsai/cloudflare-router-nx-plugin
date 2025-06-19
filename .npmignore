@@ -1,0 +1,48 @@
+# Source files (only dist should be published)
+src/
+*.ts
+!*.d.ts
+
+# Development files
+test-plugin.js
+test-workspace/
+.nx/
+.git/
+.gitignore
+
+# Build artifacts that shouldn't be published
+tsconfig.json
+nx.json
+BUILD_AND_TEST.md
+GETTING_STARTED.md
+PUBLISHING.md
+
+# Node modules and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Coverage and testing
+coverage/
+.nyc_output
+*.lcov
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# Package manager files
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp 

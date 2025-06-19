@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "cli": "nx",
+    "title": "Typecheck Executor",
+    "description": "Run TypeScript type checking for the React Router application",
+    "type": "object",
+    "properties": {},
+    "required": []
+}

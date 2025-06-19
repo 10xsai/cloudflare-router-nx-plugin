@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "version": 2,
+    "title": "Deploy executor",
+    "description": "Deploy to Cloudflare Workers",
+    "type": "object",
+    "properties": {
+        "buildTarget": {
+            "type": "string",
+            "description": "The target to run to build you the app"
+        },
+        "environment": {
+            "type": "string",
+            "description": "Environment to deploy to (staging, production, etc.)",
+            "default": "production"
+        }
+    },
+    "required": [
+        "buildTarget"
+    ]
+}

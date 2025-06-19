@@ -1,0 +1,24 @@
+{
+    "executors": {
+        "dev": {
+            "implementation": "./dist/executors/dev/executor",
+            "schema": "./dist/executors/dev/schema.json",
+            "description": "Run the development server"
+        },
+        "deploy": {
+            "implementation": "./dist/executors/deploy/executor",
+            "schema": "./dist/executors/deploy/schema.json",
+            "description": "Deploy to Cloudflare"
+        },
+        "typecheck": {
+            "implementation": "./dist/executors/typecheck/executor",
+            "schema": "./dist/executors/typecheck/schema.json",
+            "description": "Run TypeScript type checking"
+        },
+        "typegen": {
+            "implementation": "./dist/executors/typegen/executor",
+            "schema": "./dist/executors/typegen/schema.json",
+            "description": "Generate TypeScript types"
+        }
+    }
+}

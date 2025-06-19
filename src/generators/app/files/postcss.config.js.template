@@ -1,0 +1,7 @@
+<% if (style === 'tailwind') { %>export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+<% } %> 

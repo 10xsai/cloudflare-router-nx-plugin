@@ -1,0 +1,49 @@
+{
+  "name": "<%= projectName %>",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server.js",
+    "typecheck": "react-router typegen && tsc",
+    "typegen": "react-router typegen",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "deploy": "wrangler deploy",
+    "deploy:staging": "wrangler deploy --env staging",
+    "cf-typegen": "wrangler types"
+  },
+  "sideEffects": false,
+  "nx": {
+    "name": "<%= projectName %>"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.5.3",
+    "isbot": "^5.1.27",
+    "@cloudflare/workers-types": "^4.20241218.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.0.12",
+    "@nx/eslint-plugin": "^20.2.9",
+    "@react-router/dev": "^7.5.3",
+    "@types/node": "^20",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9.17.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^4.13.2"<% if (style === 'tailwind') { %>,
+    "@tailwindcss/vite": "^4.1.4",
+    "tailwindcss": "^4.1.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1"<% } %>
+  },
+  "engines": {
+    "node": "20"
+  }
+} 

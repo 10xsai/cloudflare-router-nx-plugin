@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "cli": "nx",
+    "title": "Development Server Executor",
+    "description": "Run development server with Cloudflare Workers compatibility",
+    "type": "object",
+    "properties": {
+        "buildTarget": {
+            "type": "string",
+            "description": "The target to run to build the application"
+        },
+        "port": {
+            "type": "number",
+            "description": "Port to serve the application",
+            "default": 3000
+        },
+        "host": {
+            "type": "string",
+            "description": "Host to serve the application",
+            "default": "localhost"
+        },
+        "open": {
+            "type": "boolean",
+            "description": "Open the application in the browser",
+            "default": false
+        },
+        "watch": {
+            "type": "boolean",
+            "description": "Watch for file changes",
+            "default": true
+        }
+    },
+    "required": [
+        "buildTarget"
+    ]
+}
