@@ -1,6 +1,6 @@
 # Publishing Guide for Cloudflare Router Nx Plugin
 
-This guide explains how to publish the `@cloudflare-router/nx-plugin` to npm.
+This guide explains how to publish the `cloudflare-router-nx-plugin` to npm.
 
 ## Prerequisites
 
@@ -96,7 +96,7 @@ For the initial publication:
 npm publish --access public
 ```
 
-Note: The `--access public` flag is needed for scoped packages like `@cloudflare-router/nx-plugin`.
+Note: Since we're using an unscoped package name, the `--access public` flag is not needed.
 
 #### Subsequent Publications
 
